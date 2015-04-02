@@ -10,6 +10,5 @@ public class Partie
 	 */
 	public Partie()
 	{
-		//TODO Temps d'une partie ? Création des bateaux etc...
 	}
 }
