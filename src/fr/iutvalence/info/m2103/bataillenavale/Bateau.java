@@ -6,8 +6,8 @@ package fr.iutvalence.info.m2103.bataillenavale;
  */
 public abstract class Bateau
 {
-	private final int nbCaseOccupee;
-	private final String nom;
+	protected int nbCaseOccupee;
+	protected String nom;
 	
 	
 	public Bateau()
