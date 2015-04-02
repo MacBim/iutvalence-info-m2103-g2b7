@@ -19,4 +19,16 @@ public class PlateauBatailleNavale
 	{
 		this.plateauJoueur= new CasePlateau[NB_LIGNE_DEFAUT][NB_COLONNE_DEFAUT];
 	}
+	
+	public String toString()
+	{
+		String ligne;
+		
+		for(int nbLigne=0;nbLigne<=NB_LIGNE_DEFAUT;nbLigne++)
+		{
+			
+		}
+		return null;
+		
+	}
 }
