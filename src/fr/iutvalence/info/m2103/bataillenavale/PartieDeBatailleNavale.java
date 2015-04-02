@@ -9,6 +9,7 @@ public class PartieDeBatailleNavale
 {
 	private final Joueur joueur1;
 	private final Joueur joueur2;
+	private final boolean tour;
 		
 	
 	/** 
@@ -18,6 +19,7 @@ public class PartieDeBatailleNavale
 	{
 		this.joueur1 = new Joueur();
 		this.joueur2 = new Joueur();
+		this.tour = true;
 	}
 
 	public void jouer()
