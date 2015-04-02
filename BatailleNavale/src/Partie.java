@@ -10,6 +10,6 @@ public class Partie
 	 */
 	public Partie()
 	{
-		//TODO Nombre de joueur ? Temps d'une partie ?
+		//TODO Temps d'une partie ? Création des bateaux etc...
 	}
 }
