@@ -5,12 +5,12 @@ package fr.iutvalence.info.m2103.bataillenavale;
  * @author Medy et Jean-Baptiste
  *
  */
-public class Partie
+public class PartieDeBatailleNavale
 {
 	/** 
 	 * Constructeur de partie
 	 */
-	public Partie()
+	public PartieDeBatailleNavale()
 	{
 		
 	}
