@@ -6,9 +6,19 @@ package fr.iutvalence.info.m2103.battleship;
  */
 public class BattleShipBoard
 {
+	/**
+	 * default number of board lines
+	 */
 	public final static int NB_LINE_DEFAULT=11;
+	
+	/**
+	 * default number of board columns
+	 */
 	public final static int NB_COLUMN_DEFAULT=11;
 	
+	/**
+	 * The game board is defined as a two dimensions array
+	 */
 	private BoardSquare[][] playerBoard;
 	
 	
@@ -20,13 +30,19 @@ public class BattleShipBoard
 		this.playerBoard= new BoardSquare[NB_LINE_DEFAULT][NB_COLUMN_DEFAULT];
 	}
 	
+	
+	
 	public String toString()
 	{
-		String line;
+		String line="----------------------\n\n";
 		
 		for(int nbLine=0;nbLine<=NB_LINE_DEFAULT;nbLine++)
 		{
-			
+			for(int nbColumn=0;nbColumn<NB_COLUMN_DEFAULT;nbColumn++)
+			{
+				line+="|----|";
+			}
+			line+="\n";
 		}
 		return null;
 		

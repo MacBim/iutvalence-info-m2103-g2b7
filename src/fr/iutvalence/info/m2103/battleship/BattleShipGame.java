@@ -7,21 +7,10 @@ package fr.iutvalence.info.m2103.battleship;
  */
 public class BattleShipGame
 {
-	private final Player player1;
-	private final Player player2;
-	private final boolean turn;
-		
-	
-	/** 
-	 * Game constructor
-	 */
-	public BattleShipGame()
-	{
-		this.player1 = new Player();
-		this.player2 = new Player();
-		this.turn = true;
-	}
 
+	/**
+	 * Method who start a game
+	 */
 	public void play()
 	{
 		
