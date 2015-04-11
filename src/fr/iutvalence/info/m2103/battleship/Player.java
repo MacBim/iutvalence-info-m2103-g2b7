@@ -12,19 +12,24 @@ public class Player
 	private static final int NB_DEFAULT_SHIP = 5;
 	
 	/**
-	 * the board of the player
+	 * The board of the player
 	 */
 	private final BattleShipBoard playerBoard;
 	
 	/**
-	 * the board of the ennemy
+	 * The board of the ennemy
 	 */
 	private final BattleShipBoard ennemyBoard;
 	
 	/**
-	 * the number of ship
+	 * The number of ship
 	 */
 	private final int nbShip;
+
+	/**
+	 * The name of the player
+	 */
+	private String name;
 	
 	
 	/**
@@ -35,6 +40,23 @@ public class Player
 		this.playerBoard = new BattleShipBoard();
 		this.ennemyBoard = new BattleShipBoard();
 		this.nbShip = NB_DEFAULT_SHIP;
+	}
+	
+	/**
+	 * This method allows to get the name of the player 
+	 * @return name
+	 */
+	public String getName()
+	{
+		return this.name;
+	}
+	
+	/**
+	 * This method allows to set the name of the player
+	 */
+	public void setName(String newName)
+	{
+		this.name = newName;
 	}
 	
 }
