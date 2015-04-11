@@ -2,22 +2,21 @@ package fr.iutvalence.info.m2103.battleship;
 
 /**
  * @author khebibem
- * Aircraft Carrier Class
+ * Class AircraftCarrier extending ship
  */
 public class AircraftCarrier extends Ship
 {
 	/**
-	 * default number of occuped square by the aircraft carrier
+	 * The length of the aircraft carrier
 	 */
-	public final static int NB_AIRCRAFT_CARRIER_SQUARE_OCCUPED=5;
+	public final static int AIRCRAFT_CARRIER_LENGTH=5;
 	
 	/**
 	 * AircraftCarrier Builder without parameters
 	 */
 	public AircraftCarrier()
 	{
-		this.nbOccupedSquare = NB_AIRCRAFT_CARRIER_SQUARE_OCCUPED;
-		this.name="Aircraft Carrier";
+		super(getPosition(),AIRCRAFT_CARRIER_LENGTH,"Aircraft Carrier");
 	}
 
 }

@@ -9,16 +9,15 @@ public class Destroyer extends Ship
 {
 
 	/**
-	 * The default number of square occuped by the destroyer
+	 * The length of the destroyer
 	 */
-	public final static int NB_DESTROYER_SQUARE_OCCUPED=2;
+	public final static int DESTROYER_LENGTH=2;
 	
 	/**
 	 * the destroyer constructor
 	 */
 	public Destroyer()
 	{
-		this.nbOccupedSquare = NB_DESTROYER_SQUARE_OCCUPED;
-		this.name="Destroyer";
+		super(getPosition(),DESTROYER_LENGTH,"Destroyer");
 	}
 }

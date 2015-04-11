@@ -8,17 +8,16 @@ package fr.iutvalence.info.m2103.battleship;
 public class Cruiser extends Ship
 {
 	/**
-	 * The default number of square occuped by the cruiser
+	 * The length of the cruiser
 	 */
-	public final static int NB_CRUISER_SQUARE_OCCUPED=4;
+	public final static int CRUISER_LENGTH=4;
 	
 	/**
 	 * The cruiser constructor
 	 */
 	public Cruiser()
 	{
-		this.nbOccupedSquare = NB_CRUISER_SQUARE_OCCUPED;
-		this.name="Cruiser";
+		super(getPosition(),CRUISER_LENGTH,"Cruiser");
 	}
 
 }

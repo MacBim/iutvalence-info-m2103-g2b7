@@ -8,16 +8,15 @@ public class PatrolBoat extends Ship
 {
 
 	/**
-	 * The default number of square occuped by the patrolboat
+	 * The patrolboat length
 	 */
-	public final static int NB_PATROLBOAT_SQUARE_OCCUPED=3;
+	public final static int PATROL_BOAT_LENGTH=3;
 	
 	/**
 	 * the patrolboat constructor
 	 */
 	public PatrolBoat()
 	{
-		this.nbOccupedSquare = NB_PATROLBOAT_SQUARE_OCCUPED;
-		this.name="Patrolboat";
+		super(getPosition(),PATROL_BOAT_LENGTH,"Patrolboat");
 	}
 }

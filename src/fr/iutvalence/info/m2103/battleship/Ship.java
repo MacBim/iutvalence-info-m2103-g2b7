@@ -1,4 +1,5 @@
 package fr.iutvalence.info.m2103.battleship;
+
 /**
  * The ships of the game
  * @author Medy and Jean-Baptiste
@@ -6,21 +7,35 @@ package fr.iutvalence.info.m2103.battleship;
  */
 public abstract class Ship
 {
-	/**
-	 * the number of square occuped by the ship
-	 */
-	protected int nbOccupedSquare;
+	private static Position position;
 	
 	/**
-	 * the name of the boat
+	 * The length of the ship
+	 */
+	protected int length;
+	
+	/**
+	 * the name of the ship
 	 */
 	protected String name;
 		
 	/**
-	 * the ship constructor
+	 * The ship constructor
 	 */
-	public Ship()
+	public Ship(Position pos, int l, String n)
 	{
-		
+		this.setPosition(pos);
+		this.length = l;
+		this.name = n;
+	}
+
+	public static Position getPosition()
+	{
+		return position;
+	}
+
+	public void setPosition(Position pos)
+	{
+		this.position = pos;
 	}
 }

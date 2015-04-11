@@ -8,17 +8,16 @@ package fr.iutvalence.info.m2103.battleship;
 public class Submarine extends Ship
 {
 	/**
-	 * The default number of square occuped by the submarine
+	 * The length of the submarine
 	 */
-	public final static int NB_SUBMARINE_SQUARE_OCCUPED=3;
+	public final static int SUBMARINE_LENGTH=3;
 	
 	/**
 	 * the submarine constructor
 	 */
 	public Submarine()
 	{
-		this.nbOccupedSquare = NB_SUBMARINE_SQUARE_OCCUPED;
-		this.name="Submarine";
+		super(getPosition(),SUBMARINE_LENGTH,"Submarine");
 	}
 
 }
