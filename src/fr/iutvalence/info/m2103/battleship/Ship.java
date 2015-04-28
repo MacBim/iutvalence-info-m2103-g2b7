@@ -7,7 +7,7 @@ package fr.iutvalence.info.m2103.battleship;
  */
 public abstract class Ship
 {
-	private static Position position;
+	private Position position;
 	
 	/**
 	 * The length of the ship
@@ -33,9 +33,9 @@ public abstract class Ship
 	 * allows to get the position of the ship
 	 * @return position
 	 */
-	public static Position getPosition()
+	public Position getPosition()
 	{
-		return position;
+		return this.position;
 	}
 
 	/**
