@@ -31,13 +31,17 @@ public abstract class Ship
 
 	/**
 	 * allows to get the position of the ship
-	 * @return
+	 * @return position
 	 */
 	public static Position getPosition()
 	{
 		return position;
 	}
 
+	/**
+	 * allows to set a new position to the ship
+	 * @param pos
+	 */
 	public void setPosition(Position pos)
 	{
 		this.position = pos;
