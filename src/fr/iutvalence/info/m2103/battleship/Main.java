@@ -14,8 +14,8 @@ public class Main
 	 */
 	public static void main(String[] args)
 	{
-		BattleShipBoard board = new BattleShipBoard();
-		System.out.println(board.toString());
+		BattleShipGame Game1 = new BattleShipGame();
+		Game1.play();
 	}
 
 }
