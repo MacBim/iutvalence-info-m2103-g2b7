@@ -14,12 +14,12 @@ public class Player
 	/**
 	 * The board of the player
 	 */
-	private final BattleShipBoard playerBoard;
+	public final BattleShipBoard playerBoard;
 	
 	/**
 	 * The board of the ennemy
 	 */
-	private final BattleShipBoard ennemyBoard;
+	public final BattleShipBoard ennemyBoard;
 	
 	/**
 	 * The number of ship
@@ -33,13 +33,14 @@ public class Player
 	
 	
 	/**
-	 * the player constructor
+	 * the player constructor with parameters
 	 */
-	public Player()
+	public Player(String name)
 	{
 		this.playerBoard = new BattleShipBoard();
 		this.ennemyBoard = new BattleShipBoard();
 		this.nbShip = NB_DEFAULT_SHIP;
+		this.name = name;
 	}
 	
 	/**
@@ -50,15 +51,6 @@ public class Player
 	{
 		return this.name;
 	}
-	
 
-	/**
-	 * allows to modify the name of a ship
-	 * @param newName
-	 */
-	public void setName(String newName)
-	{
-		this.name = newName;
-	}
 	
 }
