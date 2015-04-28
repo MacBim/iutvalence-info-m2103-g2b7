@@ -51,8 +51,10 @@ public class Player
 		return this.name;
 	}
 	
+
 	/**
-	 * This method allows to set the name of the player
+	 * allows to modify the name of a ship
+	 * @param newName
 	 */
 	public void setName(String newName)
 	{
