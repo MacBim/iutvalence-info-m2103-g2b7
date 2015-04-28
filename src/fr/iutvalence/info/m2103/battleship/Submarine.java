@@ -11,13 +11,13 @@ public class Submarine extends Ship
 	 * The length of the submarine
 	 */
 	public final static int SUBMARINE_LENGTH=3;
-	
-	/**
-	 * the submarine constructor
-	 */
-	public Submarine()
+
+	public Submarine(Position pos)
 	{
-		super(getPosition(),SUBMARINE_LENGTH,"Submarine");
+		super(pos, SUBMARINE_LENGTH, "SUBMARINE");
+		// TODO Auto-generated constructor stub
 	}
+	
+
 
 }
