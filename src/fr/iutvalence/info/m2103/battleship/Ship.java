@@ -22,11 +22,11 @@ public abstract class Ship
 	/**
 	 * The ship constructor
 	 */
-	public Ship(Position pos, int l, String n)
+	public Ship(Position pos, int length, String name)
 	{
 		this.setPosition(pos);
-		this.length = l;
-		this.name = n;
+		this.length = length;
+		this.name = name;
 	}
 
 	/**
