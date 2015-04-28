@@ -28,6 +28,7 @@ public class BattleShipBoard
 	public BattleShipBoard()
 	{
 		this.playerBoard= new BoardSquare[NB_LINE_DEFAULT][NB_COLUMN_DEFAULT];
+		
 	}
 	
 	
