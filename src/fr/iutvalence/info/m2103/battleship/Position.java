@@ -3,47 +3,46 @@ package fr.iutvalence.info.m2103.battleship;
 public class Position
 {
 
-	private int abscisse;
-	private int ordonnee;
+	private int abscissa;
+	private int ordinate;
 
 	public Position() 
 	{
-		this.abscisse = 0;
-		this.ordonnee = 0;
-	}
-
-
-	public Position(int x, int y) 
-	{
-		this.abscisse = x;
-		this.ordonnee = y;
-	}
-
-	public int getAbscisse() 
-	{
-		return abscisse;
-	}
-
-
-	public int getOrdonnee() 
-	{
-		return ordonnee;
+		this.abscissa = 0;
+		this.ordinate = 0;
 	}
 	
-	public void setAbscisse(int x) 
+	public Position(int x, int y) 
 	{
-		this.abscisse = x;
+		this.abscissa = x;
+		this.ordinate = y;
 	}
 
-	public void setOrdonnee(int y) 
+	public int getAbscissa() 
 	{
-		this.ordonnee = y;
+		return abscissa;
+	}
+
+
+	public int getOrdinate() 
+	{
+		return ordinate;
+	}
+	
+	public void setAbscissa(int x) 
+	{
+		this.abscissa = x;
+	}
+
+	public void setOrdinate(int y) 
+	{
+		this.ordinate = y;
 	}
 	
 	public void setPosition(int x, int y) 
 	{
-		this.abscisse = x;
-		this.ordonnee = y;
+		this.abscissa = x;
+		this.ordinate = y;
 	}
 
 }
