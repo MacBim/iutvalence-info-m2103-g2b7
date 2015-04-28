@@ -29,6 +29,10 @@ public abstract class Ship
 		this.name = n;
 	}
 
+	/**
+	 * allows to get the position of the ship
+	 * @return
+	 */
 	public static Position getPosition()
 	{
 		return position;

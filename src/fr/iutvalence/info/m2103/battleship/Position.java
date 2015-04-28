@@ -1,5 +1,9 @@
 package fr.iutvalence.info.m2103.battleship;
 
+/**
+ * the class Position
+ * @author mercieje
+ */
 public class Position
 {
 	/**
