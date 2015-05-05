@@ -14,9 +14,9 @@ public class AircraftCarrier extends Ship
 	/**
 	 * AircraftCarrier Builder without parameters
 	 */
-	public AircraftCarrier()
+	public AircraftCarrier(Position pos)
 	{
-		super(getPosition(),AIRCRAFT_CARRIER_LENGTH,"Aircraft Carrier");
+		super(pos,AIRCRAFT_CARRIER_LENGTH,"Aircraft Carrier");
 	}
 
 }

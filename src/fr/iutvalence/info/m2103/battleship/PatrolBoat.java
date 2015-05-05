@@ -15,8 +15,8 @@ public class PatrolBoat extends Ship
 	/**
 	 * the patrolboat constructor
 	 */
-	public PatrolBoat()
+	public PatrolBoat(Position pos)
 	{
-		super(getPosition(),PATROL_BOAT_LENGTH,"Patrolboat");
+		super(pos,PATROL_BOAT_LENGTH,"Patrolboat");
 	}
 }

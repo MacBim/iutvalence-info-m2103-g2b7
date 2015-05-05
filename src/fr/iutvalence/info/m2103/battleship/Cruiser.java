@@ -15,9 +15,9 @@ public class Cruiser extends Ship
 	/**
 	 * The cruiser constructor
 	 */
-	public Cruiser()
+	public Cruiser(Position pos)
 	{
-		super(getPosition(),CRUISER_LENGTH,"Cruiser");
+		super(pos,CRUISER_LENGTH,"Cruiser");
 	}
 
 }

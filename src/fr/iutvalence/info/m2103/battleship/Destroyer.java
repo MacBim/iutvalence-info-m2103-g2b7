@@ -16,8 +16,8 @@ public class Destroyer extends Ship
 	/**
 	 * the destroyer constructor
 	 */
-	public Destroyer()
+	public Destroyer(Position pos)
 	{
-		super(getPosition(),DESTROYER_LENGTH,"Destroyer");
+		super(pos,DESTROYER_LENGTH,"Destroyer");
 	}
 }
