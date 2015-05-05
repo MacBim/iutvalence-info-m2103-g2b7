@@ -1,32 +1,50 @@
 package fr.iutvalence.info.m2103.battleship;
 
+import org.omg.PortableInterceptor.INACTIVE;
+
 /**
  * The ships of the game
  * @author Medy and Jean-Baptiste
  *
  */
-public abstract class Ship
+public class Ship
 {
+	
+	/**
+	 * Position of the ship
+	 */
 	private Position position;
 	
-	/**
-	 * The length of the ship
-	 */
-	protected int length;
+	private Position frontShipPosition;
 	
-	/**
-	 * the name of the ship
-	 */
-	protected String name;
-		
+	private Position rearShipPosition;
+	
+	private ShipType shipType;
+	
+	
 	/**
 	 * The ship constructor
 	 */
-	public Ship(Position pos, int length, String name)
+	public Ship(ShipType shipType, Position frontShipPosition, Position rearShipPosition)
 	{
-		this.setPosition(pos);
-		this.length = length;
-		this.name = name;
+		if(rearShipPosition.abscissa == frontShipPosition.abscissa)
+		{
+			if(rearShipPosition.abscissa - frontShipPosition.abscissa != shipType.getSize())
+				System.out.println("Invalid Ship size");
+				
+		} else if(rearShipPosition.ordinate == frontShipPosition.ordinate)
+		{
+			if(rearShipPosition.ordinate - frontShipPosition.ordinate != shipType.getSize())
+				System.out.println("Invalid Ship size");
+		} else if(rearShipPosition != frontShipPosition)
+		{
+			System.out.println("Invalid Ship Size");
+		} else
+		{
+			this.shipType = shipType;
+			this.frontShipPosition = frontShipPosition;
+			this.rearShipPosition = rearShipPosition;
+		}
 	}
 
 	/**
