@@ -9,11 +9,11 @@ public class Position
 	/**
 	 * the abscissa of the ship
 	 */
-	private int abscissa;
+	public int abscissa;
 	/**
 	 * the ordinate of the ship
 	 */
-	private int ordinate;
+	public int ordinate;
 
 	/**
 	 * the default constructor of a position
