@@ -6,11 +6,11 @@ public enum ShipType
 	/**
 	 * the aircraft carrier
 	 */
-	AIRCRAFT_CARRIER(3),
+	AIRCRAFT_CARRIER(5),
 	/**
 	 * the submarine
 	 */
-	submarine(1),
+	submarine(3),
 	/**
 	 * the destroyer
 	 */
@@ -22,7 +22,7 @@ public enum ShipType
 	/**
 	 * the cruiser
 	 */
-	cruiser(7);
+	cruiser(3);
 	
 	
 	private final int size;
