@@ -8,22 +8,23 @@ public enum ShipType
 	 */
 	AIRCRAFT_CARRIER(5),
 	/**
-	 * the submarine
-	 */
-	submarine(3),
-	/**
-	 * the destroyer
-	 */
-	destroyer(2),
-	/**
 	 * the patrol boat
 	 */
 	patrolBoat(4),
 	/**
+	 * the submarine
+	 */
+	submarine(3),
+	/**
 	 * the cruiser
 	 */
-	cruiser(3);
-	
+	cruiser(3),
+	/**
+	 * the destroyer
+	 */
+	destroyer(2);
+
+
 	
 	private final int size;
 	
