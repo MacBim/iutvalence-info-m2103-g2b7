@@ -1,6 +1,5 @@
 package fr.iutvalence.info.m2103.battleship;
 
-import org.omg.PortableInterceptor.INACTIVE;
 
 /**
  * The ships of the game
@@ -9,14 +8,21 @@ import org.omg.PortableInterceptor.INACTIVE;
  */
 public class Ship
 {
+	/**
+	 * Constant of the horizontal orientation of the boat
+	 */
+	protected final static boolean HORIZONTAL_ORIENTATION=false;
 	
+	/**
+	 * Constant of the vertical orientation of the boat
+	 */
+	protected final static boolean VERTICAL_ORIENTATION=true;
 	/**
 	 * Position of the ship
 	 */
-	
 	private Position frontShipPosition;
 	
-	private int orientation;
+	private boolean orientation;
 	
 	private ShipType shipType;
 	
@@ -24,10 +30,7 @@ public class Ship
 	/**
 	 * The ship constructor
 	 */
-	public Ship(ShipType shipType, Position f)
-	{
 
-	}
 
 	/**
 	 * allows to get the position of the ship

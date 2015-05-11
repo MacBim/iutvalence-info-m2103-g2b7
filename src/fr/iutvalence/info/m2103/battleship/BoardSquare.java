@@ -26,7 +26,6 @@ public class BoardSquare
 	{
 		this.linePosition = line;
 		this.columnPosition = column;
-		this.isOccuped= false;
 	}
 	
 	public boolean isOccuped()
@@ -36,5 +35,8 @@ public class BoardSquare
 		else
 			return false;
 	}
-	
+	public void setOccuped()
+	{
+		this.isOccuped=true;
+	}
 }

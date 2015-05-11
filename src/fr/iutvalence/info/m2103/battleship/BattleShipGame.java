@@ -16,6 +16,7 @@ public class BattleShipGame
 		Player Player1 = new Player("Max");
 		Player Player2 = new Player("Ennemy");
 		
+		Player1.playerBoard.setAShip(ShipType.AIRCRAFT_CARRIER, 4, 4, true);
 		System.out.println(Player1.playerBoard.displayBoard());
 	}
 }
