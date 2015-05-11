@@ -15,5 +15,7 @@ public class BattleShipGame
 	{
 		Player Player1 = new Player("Max");
 		Player Player2 = new Player("Ennemy");
+		
+		System.out.println(Player1.playerBoard.displayBoard());
 	}
 }

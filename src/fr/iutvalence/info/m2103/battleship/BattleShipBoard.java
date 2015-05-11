@@ -31,21 +31,21 @@ public class BattleShipBoard
 		
 	}
 	
-	
-	
-	public String toString()
+	public String displayBoard()
 	{
-		String line="----------------------\n\n";
-		
-		for(int nbLine=0;nbLine<=NB_LINE_DEFAULT;nbLine++)
+		String board="------------------------------------------------------- \n";
+		for(int line = 0; line < NB_LINE_DEFAULT; line++)
 		{
-			for(int nbColumn=0;nbColumn<NB_COLUMN_DEFAULT;nbColumn++)
+			for(int column = 0; column < NB_COLUMN_DEFAULT; column++)
 			{
-				line+="|----|";
+				if(new BoardSquare(line,column).isOccuped())
+					board += "  x |";
+				else
+					board += "  o |";
 			}
-			line+="\n";
-		}
-		return null;
-		
+			board+= "\n-------------------------------------------------------\n";
+		} 
+		return board;
 	}
+	
 }

@@ -51,6 +51,11 @@ public class Player
 	{
 		return this.name;
 	}
+	
+	public void placeABoat(int line, int column)
+	{
+		
+	}
 
 	
 }

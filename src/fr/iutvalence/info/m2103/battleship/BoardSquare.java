@@ -5,6 +5,8 @@ package fr.iutvalence.info.m2103.battleship;
  */
 public class BoardSquare
 {
+
+
 	/**
 	 * line position attribute
 	 */
@@ -19,4 +21,20 @@ public class BoardSquare
 	 * boolean which tells if there's a ship on the square
 	 */
 	private boolean isOccuped;
+	
+	public BoardSquare(int line, int column)
+	{
+		this.linePosition = line;
+		this.columnPosition = column;
+		this.isOccuped= false;
+	}
+	
+	public boolean isOccuped()
+	{
+		if(isOccuped)
+			return true;
+		else
+			return false;
+	}
+	
 }
