@@ -39,4 +39,8 @@ public class BoardSquare
 	{
 		this.isOccuped=true;
 	}
+	public void setFree()
+	{
+		this.isOccuped=false;
+	}
 }

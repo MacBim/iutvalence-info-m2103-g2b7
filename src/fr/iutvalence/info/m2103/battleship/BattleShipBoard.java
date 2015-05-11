@@ -72,9 +72,15 @@ public class BattleShipBoard
 			}
 		}
 	}
-	public void test()
+	public void reset()
 	{
-		playerBoard[4][4].setOccuped();
+		for(int line=0; line<NB_LINE_DEFAULT;line++)
+		{
+			for(int column=0; column<NB_COLUMN_DEFAULT; column++)
+			{
+				playerBoard[line][column].setFree();;
+			}
+		}
 	}
 	
 }
