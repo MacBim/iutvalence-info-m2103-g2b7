@@ -16,6 +16,9 @@ public class BattleShipBoard
 	 */
 	public final static int NB_COLUMN_DEFAULT=11;
 	
+	/**
+	 * Array of ships
+	 */
 	private Ship[] shipArray;
 	
 	/**
