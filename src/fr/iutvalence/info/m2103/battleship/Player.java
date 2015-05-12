@@ -14,13 +14,7 @@ public class Player
 	/**
 	 * The board of the player
 	 */
-	public final BattleShipBoard playerBoard;
-	
-	/**
-	 * The board of the ennemy
-	 */
-	public final BattleShipBoard ennemyBoard;
-	
+	public final BattleShipBoard playerBoard;	
 	/**
 	 * The number of ship
 	 */
@@ -38,7 +32,6 @@ public class Player
 	public Player(String name)
 	{
 		this.playerBoard = new BattleShipBoard();
-		this.ennemyBoard = new BattleShipBoard();
 		this.nbShip = NB_DEFAULT_SHIP;
 		this.name = name;
 	}

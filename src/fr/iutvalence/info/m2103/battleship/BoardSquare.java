@@ -21,6 +21,16 @@ public class BoardSquare
 	 * boolean which tells if there's a ship on the square
 	 */
 	private boolean isOccuped;
+	/**
+	 * boolean which tells if the shot didn't hit a ship
+	 */
+	private boolean isMissed;
+	/**
+	 * boolean which tells if the shoot touched a boat on the enemy board
+	 */
+	private boolean isTouched;
+	
+	private ShipType shipType;
 	
 	public BoardSquare(int line, int column)
 	{
@@ -28,6 +38,10 @@ public class BoardSquare
 		this.columnPosition = column;
 	}
 	
+	/**
+	 * Method who return true when there's a ship in this square
+	 * @return boolean
+	 */
 	public boolean isOccuped()
 	{
 		if(isOccuped)
@@ -35,12 +49,59 @@ public class BoardSquare
 		else
 			return false;
 	}
+	/**
+	 * The sqaure is now occuped by a ship
+	 */
 	public void setOccuped()
 	{
 		this.isOccuped=true;
 	}
+	/**
+	 * The square is now free, there's no ship on it
+	 */
 	public void setFree()
 	{
 		this.isOccuped=false;
+	}
+	/**
+	 * the square has been touched by a shot but there wasn't ships on it
+	 */
+	public void setTouched()
+	{
+		this.isTouched=true;
+		this.isMissed=false;
+	}
+	/**
+	 * There was a shot on this square but no ship on it
+	 */
+	public void setMissed()
+	{
+		this.isMissed=true;
+		this.isTouched=false;
+	}
+	
+	/**
+	 * Return the shiptype who is on this sqaure 
+	 * @return
+	 */
+	public ShipType getShipType()
+	{
+		return this.shipType;
+	}
+	/**
+	 * define a shiptype to a square
+	 * @param shipType
+	 */
+	public void setShipType(ShipType shipType)
+	{
+		this.shipType=shipType;
+	}
+	public boolean isTouched()
+	{
+		return this.isTouched;
+	}
+	public boolean isMissed()
+	{
+		return this.isMissed;
 	}
 }

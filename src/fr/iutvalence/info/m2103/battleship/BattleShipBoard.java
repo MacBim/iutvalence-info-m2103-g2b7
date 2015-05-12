@@ -19,68 +19,141 @@ public class BattleShipBoard
 	/**
 	 * The game board is defined as a two dimensions array
 	 */
-	private BoardSquare[][] playerBoard;
+	private BoardSquare[][] bottomPlayerBoard;
 	
+	private BoardSquare[][] topPlayerBoard;
 	
 	/**
-	 * Board constructor with 11 lines/columns
+	 * two boards constructor with 11 lines/columns
+	 * the bottom and the top board of the player 
 	 */
 	public BattleShipBoard()
 	{
-		this.playerBoard= new BoardSquare[NB_LINE_DEFAULT][NB_COLUMN_DEFAULT];
+		this.bottomPlayerBoard= new BoardSquare[NB_LINE_DEFAULT][NB_COLUMN_DEFAULT];
+		this.topPlayerBoard= new BoardSquare[NB_LINE_DEFAULT][NB_COLUMN_DEFAULT];
 		for(int line=0; line<NB_LINE_DEFAULT;line++)
 		{
 			for(int column=0; column<NB_COLUMN_DEFAULT; column++)
 			{
-				playerBoard[line][column] = new BoardSquare(line, column);
+				bottomPlayerBoard[line][column] = new BoardSquare(line, column);
+			}
+		}
+		for(int line=0; line<NB_LINE_DEFAULT;line++)
+		{
+			for(int column=0; column<NB_COLUMN_DEFAULT; column++)
+			{
+				topPlayerBoard[line][column] = new BoardSquare(line, column);
 			}
 		}
 		
 	}
-	
-	public String displayBoard()
+	/**
+	 * Method who displays the board
+	 * @return board
+	 */
+	public void displayBoard()
 	{
-		String board="------------------------------------------------------- \n";
+		String bottomBoard="------------------------------------------------------- \n";
+		String topBoard="------------------------------------------------------- \n";
+		
 		for(int line = 0; line < NB_LINE_DEFAULT; line++)
 		{
 			for(int column = 0; column < NB_COLUMN_DEFAULT; column++)
 			{
-				if(playerBoard[line][column].isOccuped())
-					board += "  x |";
+				if(topPlayerBoard[line][column].isTouched())
+				{
+					topBoard+="   X |";
+				}
+				else if(topPlayerBoard[line][column].isMissed())
+				{
+					topBoard+="  O |";
+				}
 				else
-					board += "  o |";
+				{
+					topBoard +="    |";
+				}
 			}
-			board+= "\n-------------------------------------------------------\n";
+			topBoard+= "\n-------------------------------------------------------\n";
+		}
+		for(int line = 0; line < NB_LINE_DEFAULT; line++)
+		{
+			for(int column = 0; column < NB_COLUMN_DEFAULT; column++)
+			{
+				if(bottomPlayerBoard[line][column].isOccuped())
+				{
+					if(bottomPlayerBoard[line][column].getShipType()==ShipType.submarine)
+					{
+						bottomBoard+=" SUB|";
+					}
+					if(bottomPlayerBoard[line][column].getShipType()==ShipType.AIRCRAFT_CARRIER)
+					{
+						bottomBoard+=" A C|";
+					}
+					if(bottomPlayerBoard[line][column].getShipType()==ShipType.destroyer)
+					{
+						bottomBoard+=" DES|";
+					}
+					if(bottomPlayerBoard[line][column].getShipType()==ShipType.cruiser)
+					{
+						bottomBoard+=" CRU|";
+					}
+					if(bottomPlayerBoard[line][column].getShipType()==ShipType.patrolBoat)
+					{
+						bottomBoard+=" PB |";
+					}
+				} else
+				{
+					bottomBoard+="    |";
+				}
+			}
+			bottomBoard+= "\n-------------------------------------------------------\n";
 		} 
-		return board;
+		System.out.println(topBoard);
+		System.out.println(bottomBoard);
 	}
-	
+	/**
+	 * Method who put a ship in the board to some specific coordinate
+	 * @param shipType
+	 * @param abscissa
+	 * @param ordinate
+	 * @param boatOrientation
+	 */
 	public void setAShip(ShipType shipType,int abscissa, int ordinate, boolean boatOrientation)
 	{
 		if(boatOrientation==Ship.VERTICAL_ORIENTATION)
 		{
 			for(int line=0; line< shipType.getSize(); line++)
 			{
-				playerBoard[abscissa-1][ordinate-1+line].setOccuped();
+				bottomPlayerBoard[abscissa-1][ordinate-1+line].setOccuped();
+				bottomPlayerBoard[abscissa-1][ordinate-1+line].setShipType(shipType);
 			}
 		} 
 		else
 		{
 			for(int column=0; column< shipType.getSize(); column++)
 			{
-				playerBoard[abscissa-1+column][ordinate-1].setOccuped();
+				bottomPlayerBoard[abscissa-1+column][ordinate-1].setOccuped();
 			}
 		}
 	}
+	/**
+	 * reset the square of the board by erasing all the ships of the board
+	 */
 	public void reset()
 	{
 		for(int line=0; line<NB_LINE_DEFAULT;line++)
 		{
 			for(int column=0; column<NB_COLUMN_DEFAULT; column++)
 			{
-				playerBoard[line][column].setFree();;
+				bottomPlayerBoard[line][column].setFree();
+				topPlayerBoard[line][column].setFree();
 			}
 		}
+	}
+	
+	public void shoot(int abscissa, int ordinate)
+	{
+		
 	}
 	
 }
