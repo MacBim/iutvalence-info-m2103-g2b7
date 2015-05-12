@@ -55,8 +55,8 @@ public class BattleShipBoard
 	 */
 	public void displayBoard()
 	{
-		String bottomBoard="------------------------------------------------------- \n";
-		String topBoard="------------------------------------------------------- \n";
+		String bottomBoard="--1----2---3----4----5----6----7----8----9----10---11--\n";
+		String topBoard="--1----2---3----4----5----6----7----8----9----10---11--\n";
 		
 		for(int line = 0; line < NB_LINE_DEFAULT; line++)
 		{
@@ -126,16 +126,16 @@ public class BattleShipBoard
 		{
 			for(int line=0; line< shipType.getSize(); line++)
 			{
-				this.bottomPlayerBoard[abscissa-1][ordinate-1+line].setOccuped();
-				this.bottomPlayerBoard[abscissa-1][ordinate-1+line].setShipType(shipType);
+				this.bottomPlayerBoard[ordinate-1+line][abscissa-1].setOccuped();
+				this.bottomPlayerBoard[ordinate-1+line][abscissa-1].setShipType(shipType);
 			}
 		} 
 		else
 		{
 			for(int column=0; column< shipType.getSize(); column++)
 			{
-				this.bottomPlayerBoard[abscissa-1+column][ordinate-1].setOccuped();
-				this.bottomPlayerBoard[abscissa-1+column][ordinate-1].setShipType(shipType);
+				this.bottomPlayerBoard[ordinate-1][abscissa-1+column].setOccuped();
+				this.bottomPlayerBoard[ordinate-1][abscissa-1+column].setShipType(shipType);
 			}
 		}
 	}
@@ -161,12 +161,12 @@ public class BattleShipBoard
 	 */
 	public void shoot(int abscissa, int ordinate)
 	{
-		if(this.topPlayerBoard[abscissa][ordinate].isOccuped())
+		if(this.topPlayerBoard[abscissa-1][ordinate-1].isOccuped())
 		{
-			this.topPlayerBoard[abscissa][ordinate].setTouched();
+			this.topPlayerBoard[abscissa-1][ordinate-1].setTouched();
 		} else
 		{
-			this.topPlayerBoard[abscissa][ordinate].setMissed();
+			this.topPlayerBoard[abscissa-1][ordinate-1].setMissed();
 		}
 	}
 	
