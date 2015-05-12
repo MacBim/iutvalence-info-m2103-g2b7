@@ -11,12 +11,12 @@ public class Ship
 	/**
 	 * Constant of the horizontal orientation of the boat
 	 */
-	protected final static boolean HORIZONTAL_ORIENTATION=false;
+	public final static boolean HORIZONTAL_ORIENTATION = false;
 	
 	/**
 	 * Constant of the vertical orientation of the boat
 	 */
-	protected final static boolean VERTICAL_ORIENTATION=true;
+	public final static boolean VERTICAL_ORIENTATION = true;
 	/**
 	 * Position of the ship
 	 */
@@ -28,10 +28,29 @@ public class Ship
 	private boolean orientation;
 	
 	/**
-	 * The shiptype
+	 * The ship type
 	 */
 	private ShipType shipType;
 	
+	/**
+	 * the state of the ship
+	 */
+	private StateOfTheShip stateOfTheShip;
+	
+	/**
+	 * The constructor of the ship
+	 * @param frontShipPosition The position of the front of the ship
+	 * @param shipType The type of the ship
+	 * @param orientation The orientation (horizontal/vertical) of the ship
+	 * @param stateOfTheShip The state of the ship
+	 */
+	public Ship(Position frontShipPosition, ShipType shipType, boolean orientation,StateOfTheShip stateOfTheShip)
+	{
+		this.shipType=shipType;
+		this.orientation= orientation;
+		this.stateOfTheShip=stateOfTheShip;
+		this.frontShipPosition=frontShipPosition;
+	}
 	/**
 	 * allows to get the position of the ship
 	 * @return position
@@ -41,14 +60,4 @@ public class Ship
 		return this.frontShipPosition;
 	}
 
-	/**
-	 * allows to set a new position to the ship
-	 * @param posX
-	 * @param posY
-	 */
-	public void setPosition(int posX, int posY)
-	{
-		this.frontShipPosition.abscissa = posX;
-		this.frontShipPosition.ordinate = posY;
-	}
 }

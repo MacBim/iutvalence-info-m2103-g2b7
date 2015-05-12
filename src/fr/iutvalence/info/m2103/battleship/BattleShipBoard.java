@@ -16,40 +16,16 @@ public class BattleShipBoard
 	 */
 	public final static int NB_COLUMN_DEFAULT=11;
 	
-	/**
-	 * The game board is defined as a two dimensions array
-	 */
-	private BoardSquare[][] bottomPlayerBoard;
+	private Ship[] shipArray;
 	
 	/**
-	 * The game board is defined as a two dimensions array
-	 */
-	private BoardSquare[][] topPlayerBoard;
-	
-	/**
-	 * two boards constructor with 11 lines/columns
-	 * the bottom and the top board of the player 
+	 * constructor of the ship array
 	 */
 	public BattleShipBoard()
 	{
-		this.bottomPlayerBoard= new BoardSquare[NB_LINE_DEFAULT][NB_COLUMN_DEFAULT];
-		this.topPlayerBoard= new BoardSquare[NB_LINE_DEFAULT][NB_COLUMN_DEFAULT];
-		for(int line=0; line<NB_LINE_DEFAULT;line++)
-		{
-			for(int column=0; column<NB_COLUMN_DEFAULT; column++)
-			{
-				this.bottomPlayerBoard[line][column] = new BoardSquare(line, column);
-			}
-		}
-		for(int line=0; line<NB_LINE_DEFAULT;line++)
-		{
-			for(int column=0; column<NB_COLUMN_DEFAULT; column++)
-			{
-				this.topPlayerBoard[line][column] = new BoardSquare(line, column);
-			}
-		}
-		
+		this.shipArray= new Ship[5];	
 	}
+	
 	/**
 	 * Method who displays the board
 	 */
@@ -64,7 +40,7 @@ public class BattleShipBoard
 			{
 				if(this.topPlayerBoard[line][column].isTouched())
 				{
-					topBoard+="   X |";
+					topBoard+="  X |";
 				}
 				else if(this.topPlayerBoard[line][column].isMissed())
 				{
@@ -161,12 +137,12 @@ public class BattleShipBoard
 	 */
 	public void shoot(int abscissa, int ordinate)
 	{
-		if(this.topPlayerBoard[abscissa-1][ordinate-1].isOccuped())
+		if(this.topPlayerBoard[ordinate-1][abscissa-1].isOccuped())
 		{
-			this.topPlayerBoard[abscissa-1][ordinate-1].setTouched();
+			this.topPlayerBoard[ordinate-1][abscissa-1].setTouched();
 		} else
 		{
-			this.topPlayerBoard[abscissa-1][ordinate-1].setMissed();
+			this.topPlayerBoard[ordinate-1][abscissa-1].setMissed();
 		}
 	}
 	

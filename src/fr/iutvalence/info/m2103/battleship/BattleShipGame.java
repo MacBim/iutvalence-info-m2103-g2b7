@@ -26,14 +26,18 @@ public class BattleShipGame
 	}
 	
 	public void play()
-	{	
+	{
+		
+		
 		player1.playerBoard.setAShip(ShipType.AIRCRAFT_CARRIER, 4, 4, true);
 		player1.playerBoard.setAShip(ShipType.submarine, 1, 1, true);
 		player1.playerBoard.setAShip(ShipType.destroyer, 5, 5, true);
 		player1.playerBoard.setAShip(ShipType.cruiser, 2, 2, false);
 		player1.playerBoard.setAShip(ShipType.patrolBoat, 5, 10, false);
-		player1.playerBoard.shoot(1, 1);
-		player1.playerBoard.displayBoard();
+
 		
+		player1.playerBoard.shoot(1, 1);
+		player1.playerBoard.shoot(1, 2);
+		player1.playerBoard.displayBoard();
 	}
 }
