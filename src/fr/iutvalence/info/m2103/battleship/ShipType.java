@@ -1,5 +1,9 @@
 package fr.iutvalence.info.m2103.battleship;
 
+/**The shypType class
+ * @author khebibem
+ *
+ */
 public enum ShipType
 {
 	
@@ -26,13 +30,24 @@ public enum ShipType
 
 
 	
+	/**
+	 * the size of the ship
+	 */
 	private final int size;
 	
+	/**
+	 * The constructor of shiptype
+	 * @param size
+	 */
 	private ShipType(int size)
 	{
 		this.size = size;
 	}
 	
+	/**
+	 * The getter of the size of the ship
+	 * @return size
+	 */
 	public int getSize()
 	{
 		return this.size;

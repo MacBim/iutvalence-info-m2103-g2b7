@@ -22,16 +22,16 @@ public class Ship
 	 */
 	private Position frontShipPosition;
 	
+	/**
+	 * the orientation of the ship
+	 */
 	private boolean orientation;
 	
+	/**
+	 * The shiptype
+	 */
 	private ShipType shipType;
 	
-	
-	/**
-	 * The ship constructor
-	 */
-
-
 	/**
 	 * allows to get the position of the ship
 	 * @return position
@@ -43,7 +43,8 @@ public class Ship
 
 	/**
 	 * allows to set a new position to the ship
-	 * @param pos
+	 * @param posX
+	 * @param posY
 	 */
 	public void setPosition(int posX, int posY)
 	{

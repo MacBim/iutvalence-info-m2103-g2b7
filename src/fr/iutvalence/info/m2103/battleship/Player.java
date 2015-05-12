@@ -28,6 +28,7 @@ public class Player
 	
 	/**
 	 * the player constructor with parameters
+	 * @param name 
 	 */
 	public Player(String name)
 	{

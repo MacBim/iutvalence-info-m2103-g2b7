@@ -21,6 +21,9 @@ public class BattleShipBoard
 	 */
 	private BoardSquare[][] bottomPlayerBoard;
 	
+	/**
+	 * The game board is defined as a two dimensions array
+	 */
 	private BoardSquare[][] topPlayerBoard;
 	
 	/**
@@ -35,21 +38,20 @@ public class BattleShipBoard
 		{
 			for(int column=0; column<NB_COLUMN_DEFAULT; column++)
 			{
-				bottomPlayerBoard[line][column] = new BoardSquare(line, column);
+				this.bottomPlayerBoard[line][column] = new BoardSquare(line, column);
 			}
 		}
 		for(int line=0; line<NB_LINE_DEFAULT;line++)
 		{
 			for(int column=0; column<NB_COLUMN_DEFAULT; column++)
 			{
-				topPlayerBoard[line][column] = new BoardSquare(line, column);
+				this.topPlayerBoard[line][column] = new BoardSquare(line, column);
 			}
 		}
 		
 	}
 	/**
 	 * Method who displays the board
-	 * @return board
 	 */
 	public void displayBoard()
 	{
@@ -60,11 +62,11 @@ public class BattleShipBoard
 		{
 			for(int column = 0; column < NB_COLUMN_DEFAULT; column++)
 			{
-				if(topPlayerBoard[line][column].isTouched())
+				if(this.topPlayerBoard[line][column].isTouched())
 				{
 					topBoard+="   X |";
 				}
-				else if(topPlayerBoard[line][column].isMissed())
+				else if(this.topPlayerBoard[line][column].isMissed())
 				{
 					topBoard+="  O |";
 				}
@@ -79,25 +81,25 @@ public class BattleShipBoard
 		{
 			for(int column = 0; column < NB_COLUMN_DEFAULT; column++)
 			{
-				if(bottomPlayerBoard[line][column].isOccuped())
+				if(this.bottomPlayerBoard[line][column].isOccuped())
 				{
-					if(bottomPlayerBoard[line][column].getShipType()==ShipType.submarine)
+					if(this.bottomPlayerBoard[line][column].getShipType()==ShipType.submarine)
 					{
 						bottomBoard+=" SUB|";
 					}
-					if(bottomPlayerBoard[line][column].getShipType()==ShipType.AIRCRAFT_CARRIER)
+					else if(this.bottomPlayerBoard[line][column].getShipType()==ShipType.AIRCRAFT_CARRIER)
 					{
 						bottomBoard+=" A C|";
 					}
-					if(bottomPlayerBoard[line][column].getShipType()==ShipType.destroyer)
+					else if(this.bottomPlayerBoard[line][column].getShipType()==ShipType.destroyer)
 					{
 						bottomBoard+=" DES|";
 					}
-					if(bottomPlayerBoard[line][column].getShipType()==ShipType.cruiser)
+					else if(this.bottomPlayerBoard[line][column].getShipType()==ShipType.cruiser)
 					{
 						bottomBoard+=" CRU|";
 					}
-					if(bottomPlayerBoard[line][column].getShipType()==ShipType.patrolBoat)
+					else if(this.bottomPlayerBoard[line][column].getShipType()==ShipType.patrolBoat)
 					{
 						bottomBoard+=" PB |";
 					}
@@ -124,15 +126,16 @@ public class BattleShipBoard
 		{
 			for(int line=0; line< shipType.getSize(); line++)
 			{
-				bottomPlayerBoard[abscissa-1][ordinate-1+line].setOccuped();
-				bottomPlayerBoard[abscissa-1][ordinate-1+line].setShipType(shipType);
+				this.bottomPlayerBoard[abscissa-1][ordinate-1+line].setOccuped();
+				this.bottomPlayerBoard[abscissa-1][ordinate-1+line].setShipType(shipType);
 			}
 		} 
 		else
 		{
 			for(int column=0; column< shipType.getSize(); column++)
 			{
-				bottomPlayerBoard[abscissa-1+column][ordinate-1].setOccuped();
+				this.bottomPlayerBoard[abscissa-1+column][ordinate-1].setOccuped();
+				this.bottomPlayerBoard[abscissa-1+column][ordinate-1].setShipType(shipType);
 			}
 		}
 	}
@@ -145,15 +148,26 @@ public class BattleShipBoard
 		{
 			for(int column=0; column<NB_COLUMN_DEFAULT; column++)
 			{
-				bottomPlayerBoard[line][column].setFree();
-				topPlayerBoard[line][column].setFree();
+				this.bottomPlayerBoard[line][column].setFree();
+				this.topPlayerBoard[line][column].setFree();
 			}
 		}
 	}
 	
+	/**
+	 * shoot on the boat of the ennemy if there is one.
+	 * @param abscissa
+	 * @param ordinate
+	 */
 	public void shoot(int abscissa, int ordinate)
 	{
-		
+		if(this.topPlayerBoard[abscissa][ordinate].isOccuped())
+		{
+			this.topPlayerBoard[abscissa][ordinate].setTouched();
+		} else
+		{
+			this.topPlayerBoard[abscissa][ordinate].setMissed();
+		}
 	}
 	
 }

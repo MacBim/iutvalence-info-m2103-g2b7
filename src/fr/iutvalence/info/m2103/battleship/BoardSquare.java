@@ -5,8 +5,6 @@ package fr.iutvalence.info.m2103.battleship;
  */
 public class BoardSquare
 {
-
-
 	/**
 	 * line position attribute
 	 */
@@ -30,8 +28,16 @@ public class BoardSquare
 	 */
 	private boolean isTouched;
 	
+	/**
+	 * The shiptype
+	 */
 	private ShipType shipType;
 	
+	/**
+	 * The boardsquare
+	 * @param line
+	 * @param column
+	 */
 	public BoardSquare(int line, int column)
 	{
 		this.linePosition = line;
@@ -81,8 +87,8 @@ public class BoardSquare
 	}
 	
 	/**
-	 * Return the shiptype who is on this sqaure 
-	 * @return
+	 * Return the shiptype who is on this square 
+	 * @return this.shipType
 	 */
 	public ShipType getShipType()
 	{
@@ -96,10 +102,18 @@ public class BoardSquare
 	{
 		this.shipType=shipType;
 	}
+	/**
+	 * 
+	 * @return this.isTouched
+	 */
 	public boolean isTouched()
 	{
 		return this.isTouched;
 	}
+	/**
+	 * 
+	 * @return this.isMissed
+	 */
 	public boolean isMissed()
 	{
 		return this.isMissed;
