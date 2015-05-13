@@ -44,11 +44,11 @@ public class Ship
 	 * @param orientation The orientation (horizontal/vertical) of the ship
 	 * @param stateOfTheShip The state of the ship
 	 */
-	public Ship(Position frontShipPosition, ShipType shipType, boolean orientation,StateOfTheShip stateOfTheShip)
+	public Ship(Position frontShipPosition, ShipType shipType, boolean orientation)
 	{
 		this.shipType=shipType;
 		this.orientation= orientation;
-		this.stateOfTheShip=stateOfTheShip;
+		this.stateOfTheShip=StateOfTheShip.isNotTouched;
 		this.frontShipPosition=frontShipPosition;
 	}
 	/**
@@ -58,6 +58,21 @@ public class Ship
 	public Position getPosition()
 	{
 		return this.frontShipPosition;
+	}
+	
+	public void setTouched()
+	{
+		this.stateOfTheShip= StateOfTheShip.isTouched;
+	}
+	public boolean isSinked()
+	{
+		if(this.orientation)
+		{
+			for(int abscissaIndex=0; abscissaIndex < this.shipType.getSize(); abscissaIndex++)
+			{
+				
+			}
+		}
 	}
 
 }
