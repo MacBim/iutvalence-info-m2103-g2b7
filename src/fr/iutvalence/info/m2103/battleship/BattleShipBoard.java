@@ -11,6 +11,8 @@ public class BattleShipBoard
 	 */
 	public final static int NB_LINE_DEFAULT=11;
 	
+	private final static int NUMBER_OF_SHIPS = 5;
+	
 	/**
 	 * default number of board columns
 	 */
@@ -26,7 +28,7 @@ public class BattleShipBoard
 	 */
 	public BattleShipBoard()
 	{
-		this.shipArray= new Ship[5];	
+		this.shipArray= new Ship[NUMBER_OF_SHIPS];	
 	}
 	
 //	/**
@@ -111,7 +113,7 @@ public class BattleShipBoard
 	{
 		for(int shipIndex = 0; shipIndex < 5; shipIndex++)
 		{
-			this.shipArray[shipIndex] = null;
+			
 		}
 	}
 	
@@ -125,9 +127,9 @@ public class BattleShipBoard
 		Position coordinateOfShoot = new Position(abscissa, ordinate);
 		for(int shipIndex = 0; shipIndex < 5; shipIndex++)
 		{
-			if(shipArray[shipIndex].getPosition() == coordinateOfShoot)
+			if(shipArray[shipIndex].getFrontPosition() == coordinateOfShoot)
 			{
-				shipArray[shipIndex].setTouched();
+
 			}
 		}
 	}

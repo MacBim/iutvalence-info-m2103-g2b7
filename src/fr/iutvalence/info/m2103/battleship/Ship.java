@@ -20,7 +20,7 @@ public class Ship
 	/**
 	 * Position of the ship
 	 */
-	private Position frontShipPosition;
+	private final Position frontShipPosition;
 	
 	/**
 	 * the orientation of the ship
@@ -30,13 +30,15 @@ public class Ship
 	/**
 	 * The ship type
 	 */
-	private ShipType shipType;
+	private final ShipType shipType;
 	
 	/**
 	 * the state of the ship
 	 */
 	private StateOfTheShip stateOfTheShip;
 	
+	protected boolean[] isThereABoatHere;
+	 
 	/**
 	 * The constructor of the ship
 	 * @param frontShipPosition The position of the front of the ship
@@ -48,31 +50,52 @@ public class Ship
 	{
 		this.shipType=shipType;
 		this.orientation= orientation;
-		this.stateOfTheShip=StateOfTheShip.isNotTouched;
 		this.frontShipPosition=frontShipPosition;
+		
+		//this.stateOfTheShip=StateOfTheShip.isNotTouched;
+		
+		for(int squareIndex=0; squareIndex<this.shipType.getSize(); squareIndex++)
+		{
+			this.isThereABoatHere[squareIndex]=true;
+		}
 	}
+	
 	/**
 	 * allows to get the position of the ship
 	 * @return position
 	 */
-	public Position getPosition()
+	public Position getFrontPosition()
 	{
 		return this.frontShipPosition;
 	}
 	
-	public void setTouched()
-	{
-		this.stateOfTheShip= StateOfTheShip.isTouched;
-	}
+	/**
+	 * 
+	 * @return
+	 */
 	public boolean isSinked()
 	{
 		if(this.orientation)
 		{
 			for(int abscissaIndex=0; abscissaIndex < this.shipType.getSize(); abscissaIndex++)
 			{
-				
+			//TODO	
 			}
 		}
+		return false;
 	}
+	
+	public void setTouched(int square)
+	{
+		this.isThereABoatHere[square] = false;
+	}
+	
+	public boolean isThereAShipHere(int abscissa, int ordinate)
+	{
+		if();
+		
+		return true;
+	}
+
 
 }
