@@ -92,17 +92,27 @@ public class BattleShipBoard
 //		System.out.println(topBoard);
 //		System.out.println(bottomBoard);
 //
-	
-	public void putABoad(Ship ship, int abscissa, int ordinate)
-	{
-		
+	/**
+	 * Method who puts a ship in the board
+	 * @param shipType The type of the ship
+	 * @param abscissa The abscissa coordinate of the front of the ship
+	 * @param ordinate The ordinate coordinate of the front of the ship
+	 * @param orientation The orientation of the ship
+	 */
+	public void putAShip(ShipType shipType, int abscissa, int ordinate,boolean orientation)
+	{	
+		Position frontShipPosition = new Position(abscissa,ordinate);
+		Ship ship = new Ship(frontShipPosition,shipType,orientation);
 	}
 	/**
 	 * reset the square of the board by erasing all the ships of the board
 	 */
 	public void resetBoard()
 	{
-
+		for(int shipIndex = 0; shipIndex < 5; shipIndex++)
+		{
+			this.shipArray[shipIndex] = null;
+		}
 	}
 	
 	/**
@@ -112,7 +122,14 @@ public class BattleShipBoard
 	 */
 	public void shoot(int abscissa, int ordinate)
 	{
-
+		Position coordinateOfShoot = new Position(abscissa, ordinate);
+		for(int shipIndex = 0; shipIndex < 5; shipIndex++)
+		{
+			if(shipArray[shipIndex].getPosition() == coordinateOfShoot)
+			{
+				shipArray[shipIndex].setTouched();
+			}
+		}
 	}
 	
 }
