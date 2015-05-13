@@ -54,33 +54,5 @@ public class Position
 		return ordinate;
 	}
 	
-	/**
-	 * allows to set a new abscissa to the ship
-	 * @param x
-	 */
-	public void setAbscissa(int x) 
-	{
-		this.abscissa = x;
-	}
-
-	/**
-	 * allows to set a new ordinate to the ship
-	 * @param y
-	 */
-	public void setOrdinate(int y) 
-	{
-		this.ordinate = y;
-	}
-	
-	/**
-	 * allows to set a new position to the ship 
-	 * @param x
-	 * @param y
-	 */
-	public void setPosition(int x, int y) 
-	{
-		this.abscissa = x;
-		this.ordinate = y;
-	}
 
 }
