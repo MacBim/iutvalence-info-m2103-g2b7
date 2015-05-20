@@ -10,15 +10,14 @@ public class BattleShipBoard
 	 * default number of board lines
 	 */
 	public final static int NB_LINE_DEFAULT=11;
-	
-	private final static int NUMBER_OF_SHIPS = 5;
-	
 	/**
 	 * default number of board columns
 	 */
 	public final static int NB_COLUMN_DEFAULT=11;
-	
-	
+	/**
+	 * default number of ships
+	 */
+	private final static int NUMBER_OF_SHIPS = 5;
 	/**
 	 * Array of ships
 	 */
@@ -33,7 +32,7 @@ public class BattleShipBoard
 	}
 	
 //	/**
-//	 * Method who displays the board
+//	 * old method which displays the board
 //	 */
 //	public void displayBoard()
 //	{
@@ -131,7 +130,10 @@ public class BattleShipBoard
 			}
 		}
 	}
-	
+	/**
+	 * The toString method which displays the board on the terminal
+	 * @return board
+	 */
 	public String toString()
 	{
 		

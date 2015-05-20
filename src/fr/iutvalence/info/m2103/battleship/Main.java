@@ -9,7 +9,7 @@ public class Main
 {
 
 	/**
-	 * 
+	 * The main of the application
 	 * @param args
 	 */
 	public static void main(String[] args)

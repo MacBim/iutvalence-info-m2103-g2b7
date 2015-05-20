@@ -11,9 +11,13 @@ public class BattleShipGame
 	 * the turns of the game
 	 */
 	private int turn;
-	
+	/**
+	 * The player 1
+	 */
 	private Player player1;
-	
+	/**
+	 * The player 2
+	 */
 	private Player player2;
 	/**
 	 * Method who start a game
@@ -24,7 +28,9 @@ public class BattleShipGame
 		this.player1= new Player("Max");
 		this.player2= new Player("Ennemy");
 	}
-	
+	/**
+	 * method which allows to "play" the game
+	 */
 	public void play()
 	{
 		System.out.println(this.player1.playerBoard.toString());
