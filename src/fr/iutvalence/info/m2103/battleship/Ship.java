@@ -1,5 +1,7 @@
 package fr.iutvalence.info.m2103.battleship;
 
+import java.security.cert.CertPathValidatorException.Reason;
+
 
 /**
  * The ships of the game
@@ -84,18 +86,63 @@ public class Ship
 		}
 		return false;
 	}
-	
+	/**
+	 * method which change the state of the ship to "Touched"
+	 * @param square
+	 */
 	public void setTouched(int square)
 	{
 		this.isThereABoatHere[square] = false;
 	}
 	
+	/**
+	 * method which returns the orientation of the ship
+	 * @return boolean
+	 */
+	public boolean getOrientation()
+	{
+		return this.orientation;
+	}
+	
+	/**
+	 * methods who tells if there's a ship in these coordinate
+	 * @param abscissa
+	 * @param ordinate
+	 * @return
+	 */
 	public boolean isThereAShipHere(int abscissa, int ordinate)
 	{
-		if();
+		Position shootPosition = new Position(abscissa,ordinate);
 		
-		return true;
+		if(shootPosition == this.frontShipPosition)
+			return true;
+		
+		if(this.orientation)
+		{
+			Position rearShipPosition = new Position(abscissa,ordinate+this.shipType.getSize()-1);
+			if(ordinate >= this.frontShipPosition.ordinate && ordinate <=rearShipPosition.ordinate)
+			{
+				return true;
+			}
+		}else
+		{
+			Position rearShipPosition = new Position(abscissa+this.shipType.getSize()-1,ordinate);
+			if(abscissa >= this.frontShipPosition.abscissa && abscissa <=rearShipPosition.abscissa)
+			{
+				return true;
+			}
+			
+		}
+		return false;
 	}
+	/**
+	 * Methods who return the type of the boat
+	 * @return this.shipType
+	 */
+	 public ShipType getShipType()
+	 {
+		 return this.getShipType();
+	 }
 
 
 }
