@@ -18,6 +18,7 @@ public class BattleShipBoard
 	 */
 	public final static int NB_COLUMN_DEFAULT=11;
 	
+	
 	/**
 	 * Array of ships
 	 */
@@ -103,35 +104,47 @@ public class BattleShipBoard
 	 */
 	public void putAShip(ShipType shipType, int abscissa, int ordinate,boolean orientation)
 	{	
+		int shipIndex = 0;
 		Position frontShipPosition = new Position(abscissa,ordinate);
-		Ship ship = new Ship(frontShipPosition,shipType,orientation);
-	}
-	/**
-	 * reset the square of the board by erasing all the ships of the board
-	 */
-	public void resetBoard()
-	{
-		for(int shipIndex = 0; shipIndex < 5; shipIndex++)
-		{
-			
-		}
+		this.shipArray[shipIndex] = new Ship(frontShipPosition,shipType,orientation);
+		shipIndex++;
 	}
 	
 	/**
-	 * shoot on the boat of the ennemy if there is one.
+	 * shoot on the boat of the enemy if there is one.
 	 * @param abscissa
 	 * @param ordinate
 	 */
 	public void shoot(int abscissa, int ordinate)
 	{
-		Position coordinateOfShoot = new Position(abscissa, ordinate);
 		for(int shipIndex = 0; shipIndex < 5; shipIndex++)
 		{
-			if(shipArray[shipIndex].getFrontPosition() == coordinateOfShoot)
+			if(shipArray[shipIndex].isThereAShipHere(abscissa, ordinate))
 			{
-
+				if(shipArray[shipIndex].getOrientation())
+				{
+					shipArray[shipIndex].setTouched(abscissa - shipArray[shipIndex].getFrontPosition().abscissa);
+				}else 
+				{
+					shipArray[shipIndex].setTouched(ordinate - shipArray[shipIndex].getFrontPosition().ordinate);
+				}
 			}
 		}
+	}
+	
+	public String toString()
+	{
+		
+		String board ="--1----2---3----4----5----6----7----8----9----10---11--\n";
+		for(int lineIndex = 0; lineIndex<11; lineIndex++)
+		{
+			for(int columnIndex = 0; columnIndex<11; columnIndex++)
+			{
+				board += "    |";
+			}
+			board+="\n-------------------------------------------------------\n";
+		}
+		return board;
 	}
 	
 }
