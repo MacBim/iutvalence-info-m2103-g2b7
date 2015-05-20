@@ -72,7 +72,7 @@ public class Ship
 	}
 	
 	/**
-	 * 
+	 * method which change the state of the ship to "sinked"
 	 * @return
 	 */
 	public boolean isSinked()

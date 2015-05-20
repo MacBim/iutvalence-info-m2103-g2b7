@@ -10,7 +10,7 @@ public enum ShipType
 	/**
 	 * the aircraft carrier
 	 */
-	AIRCRAFT_CARRIER(5),
+	aircraft_carrier(5),
 	/**
 	 * the patrol boat
 	 */
