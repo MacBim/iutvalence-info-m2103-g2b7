@@ -27,6 +27,6 @@ public class BattleShipGame
 	
 	public void play()
 	{
-		
+		System.out.println(this.player1.playerBoard.toString());
 	}
 }
