@@ -143,6 +143,34 @@ public class BattleShipBoard
 			for(int columnIndex = 0; columnIndex<11; columnIndex++)
 			{
 				board += "    |";
+				for (int shipIndex = 0; shipIndex<5; shipIndex++)
+				{
+					//Position shipPosition = new Position(columnIndex,lineIndex);
+					
+					if(this.shipArray[shipIndex].isThereAShipHere(columnIndex,lineIndex))
+					{
+							if(this.shipArray[shipIndex].getShipType()==ShipType.submarine)
+							{
+								board+=" SUB|";
+							}
+							else if(this.shipArray[shipIndex].getShipType()==ShipType.aircraft_carrier)
+							{
+								board+=" A C|";
+							}
+							else if(this.shipArray[shipIndex].getShipType()==ShipType.destroyer)
+							{
+								board+=" DES|";
+							}
+							else if(this.shipArray[shipIndex].getShipType()==ShipType.cruiser)
+							{
+								board+=" CRU|";
+							}
+							else if(this.shipArray[shipIndex].getShipType()==ShipType.patrolBoat)
+							{
+								board+=" PB |";
+							}
+					}
+				}
 			}
 			board+="\n-------------------------------------------------------\n";
 		}
